@@ -1,0 +1,25 @@
+<div>
+    <h1>Search Here</h1>
+        <input name="n1" #f (keyup)="onsearch(f.value)" type='text'>
+      </div>
+      <table class="table" >
+    <thead>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of arr" >
+          <td>{{item.Id}}</td>
+          <td>{{item.Title}}</td>
+          <td>{{item.Status}}</td>
+       <td><button class="btn btn-info" (click)="onTaskDelete(item)" >Delete</button>
+       <button class="btn btn-info" (click)="onEditTask(item)"  >edit</button>
+       <button class="btn btn-info" (click)="onUserEditReactive(item)"  >Edit Reactive</button>
+        </td>
+      </tr>
+        </tbody>
+    </table>
+
+

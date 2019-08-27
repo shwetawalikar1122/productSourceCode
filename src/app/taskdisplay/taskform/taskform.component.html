@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Add task form</h1>
+<form (ngSubmit)="onTaskSave(f)" #f="ngForm" >
+    <div class="form-group" >
+      <label>ID</label>
+      <input name="Id" required email ngModel #Id="ngModel"  type="text" class="form-control" placeholder="Enter ID">
+      <label class="alert alert-danger" *ngIf="Id.hasError('required') && !Id.pristine"  >Id is required.</label>
+    </div>
+    <div class="form-group" >
+      <label>Title<Title></Title></label>
+      <input name="Title" required minlength="5" pattern="[a-zA-Z]*"  ngModel #Title="ngModel"  type="text" class="form-control" placeholder="Enter the title">
+      <label class="alert alert-danger" *ngIf="Title.hasError('required') && !Title.pristine" >Title is required</label>
+      <!-- <label class="alert alert-danger" *ngIf="Title.hasError('minlength') && !Title.pristine" >min 5 digits</label>
+      <label class="alert alert-danger" *ngIf="Title.hasError('pattern') && !Title.pristine" >only char</label> -->
+    </div>
+       <div class="form-group" >
+      <label>Status</label>
+      <input name="Status" ngModel type="text" class="form-control" placeholder="Enter Status">
+      <!-- <select>
+        <option value="Done">Done</option>
+        <option value="Pending">Pending</option>
+        </select> -->
+    </div>
+    <div class="form-group">
+      <button  type="submit" class="form-control btn btn-primary" >save task</button>
+    </div>
+  </form>
+</div>

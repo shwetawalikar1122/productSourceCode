@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>display-reactive-task form</h1>
+<form [formGroup]="task"(ngSubmit)="OnSubmit()" >
+    <div class="form-group" >
+      <label>ID</label>
+      <input  formControlName="Id"  type="text" class="form-control" placeholder="Enter ID">
+      <!-- <label class="alert alert-danger" *ngIf="task.get('Id').hasError('required') && !Id.get('Id').pristine" >Id is required.</label> -->
+    </div>
+    <div class="form-group" >
+      <label>Title</label>
+      <input formControlName="Title"  type="text" class="form-control" placeholder="Enter the title">
+      <!-- <label class="alert alert-danger" *ngIf="task.get('Title').hasError('required') && !Title.get('Title').pristine" >Title is required</label> -->
+      <!-- <label class="alert alert-danger" *ngIf="Title.hasError('minlength') && !Title.pristine" >min 5 digits</label>
+      <label class="alert alert-danger" *ngIf="Title.hasError('pattern') && !Title.pristine" >only char</label> -->
+    </div>
+       <div class="form-group" >
+      <label>Status</label>
+      <input formControlName="Status"  type="text" class="form-control" placeholder="Enter Status">
+      <!-- <select>
+        <option value="Done">Done</option>
+        <option value="Pending">Pending</option>
+        </select> -->
+    </div>
+    <div class="form-group">
+      <button  type="submit" class="form-control btn btn-primary" >save task</button>
+    </div>
+  </form>
+</div>
